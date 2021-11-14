@@ -10,6 +10,7 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
+	document.getElementById("volume").innerHTML = (video.volume * 100 + "%");
 });
 
 // Pause Video Function
@@ -23,23 +24,25 @@ document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted) {
 	video.muted = false;
 	console.log("Video Unmuted");
+	document.getElementById("mute").innerHTML = "Mute"
 	}
 	else {
 		video.muted = true;
 		console.log("Video Muted")
+		document.getElementById("mute").innerHTML = "Unmute"
 	}
 });
 
 // Decrease Video Speed Function
 document.querySelector("#slower").addEventListener("click", function() {
 	video.playbackRate = video.playbackRate - 0.05;
-	console.log("Current Speed is " + video.playbackRate);
+	console.log("New Speed " + video.playbackRate);
 });
 
 // Increase Video Speed Function
 document.querySelector("#faster").addEventListener("click", function() {
 	video.playbackRate = video.playbackRate + 0.05;
-	console.log("Current Speed is " + video.playbackRate + "%");
+	console.log("New Speed " + video.playbackRate);
 });
 
 // Skip Video
