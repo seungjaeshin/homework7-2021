@@ -1,5 +1,5 @@
 var video = document.querySelector('#player1');
-var volume = document.querySelector('#volume').innerHTML;
+// var volume = document.querySelector('#volume').innerHTML;
 var slider = document.querySelector('#slider');
 
 // console.log(slider);
@@ -70,12 +70,18 @@ document.querySelector("#skip").addEventListener("click", function() {
 // 	document.querySelector('#volume').innerHTML = slider_value + '%';
 // });
 
-slider.addEventListener('change', function(e){
-	video.slider = e.currentTarget.value / 100;
-	document.querySelector('#volume').innerHTML = video.slider*100 + '%'
-	console.log(video.slider)
-	
+slider.addEventListener('change', function() {
+	video.volume = slider.value / 100;
+	document.querySelector('#volume').innerHTML = video.volume*100 + '%';
+	console.log(video.volume);
 });
+
+// slider.addEventListener('change', function(e){
+// 	video.slider = e.currentTarget.value / 100;
+// 	document.querySelector('#volume').innerHTML = video.slider*100 + '%'
+// 	console.log(video.slider)
+	
+// });
 
 
 // Style change
